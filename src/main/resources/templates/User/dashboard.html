@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title data-th-text="${loggedInUser.name}+' | Dashboard'">Profile Page</title>
+</head>
+<body>
+
+<div id="content">
+    <!--    sidebar-->
+    <!-- user is logged in :sidebar-->
+    <div th:if="${loggedInUser}">
+        <div data-th-replace="~{User/sidebar :: sidebar}"></div>
+    </div>
+
+    <div   class="sm:pl-64 pt-20" style="height:1000px;">
+        <div class="flex justify-center flex-col items-center">
+            <h1 class="text-5xl">Welcome to Dashboard page</h1>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
+        </div>
+    </div>
+</div>
+<script>
+    console.log("This is a Profile page");
+</script>
+</body>
+</html>
